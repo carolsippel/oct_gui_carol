@@ -88,6 +88,9 @@ function execute_procura_txt_3 (obj)
     guidata(obj, h);
 endfunction
 
+function rodar (obj)
+endfunction
+
 % Define o offset para posicionar os gráficos/imagens
 pos_grafico_offset_x = 0.025;
 pos_grafico_offset_y = 0.35;
@@ -128,6 +131,13 @@ h.print_pushbutton = uicontrol ("style", "pushbutton",
                                 "callback", @execute_procura_txt_3,
                                 "position", [pos_grafico_offset_x+0.65 0.68 0.25 0.04]);
 
+% Botao resultado e opções de checkbox
+h.botao_resultado  = uicontrol ("style", "pushbutton",
+                                "units", "normalized",
+                                "string", "Computar resultado",
+                                "callback", @rodar,
+                                "position", [pos_grafico_offset_x+0.75 0.04 0.15 0.06]);
+
 % Escreve o texto = e outros na inteface
 h.linecolor_label = uicontrol ("style", "text",
                                "units", "normalized",
@@ -139,7 +149,7 @@ h.linecolor_label = uicontrol ("style", "text",
 h.plot_title_edit = uicontrol ("style", "edit",
                                "units", "normalized",
                                "string", "Resultado",
-                               "position", [pos_grafico_offset_x+0.75 0.14 0.15 0.06]);
+                               "position", [pos_grafico_offset_x+0.75 0.14 0.15 0.04]);
 
 % Geração dos gráficos
 h.grafico_1 = axes ("position", [pos_grafico_offset_x+0.05 pos_grafico_offset_y 0.25 0.3]);
